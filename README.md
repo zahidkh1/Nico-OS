@@ -20,7 +20,7 @@
 
 <p>
 
-![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?style=flat-square)
+![ESP32](https://.shields.io/badge/ESP32-IoT-blue?style=flat-square)
 ![Arduino](https://img.shields.io/badge/Arduino-C++-00979D?style=flat-square)
 ![Android](https://img.shields.io/badge/Android-Blueprint-green?style=flat-square)
 ![UDP](https://img.shields.io/badge/Communication-UDP-orange?style=flat-square)
@@ -379,7 +379,7 @@ The following functionality has been successfully tested.
 ## Front View
 
 <p align="center">
-<img src="images/front-view.jpeg" width="650">
+<img src="images/nico-front-view.jpeg" width="650">
 </p>
 
 ---
@@ -387,7 +387,7 @@ The following functionality has been successfully tested.
 ## Side View
 
 <p align="center">
-<img src="images/side-view.jpeg" width="650">
+<img src="images/nico-side-view.jpeg" width="650">
 </p>
 
 ---
@@ -395,7 +395,7 @@ The following functionality has been successfully tested.
 ## Top View
 
 <p align="center">
-<img src="images/top-view.jpeg" width="650">
+<img src="images/nico-top-view.jpeg" width="650">
 </p>
 
 ---
@@ -403,7 +403,7 @@ The following functionality has been successfully tested.
 ## Bottom View
 
 <p align="center">
-<img src="images/bottom-view.jpeg" width="650">
+<img src="images/nico-bottom-view.jpeg" width="650">
 </p>
 
 ---
