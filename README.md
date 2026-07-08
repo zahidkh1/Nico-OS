@@ -379,7 +379,7 @@ The following functionality has been successfully tested.
 ## Front View
 
 <p align="center">
-<img src="images/Nico_Front view.jpeg" width="650">
+<img src="images/front-view.jpeg" width="650">
 </p>
 
 ---
@@ -387,7 +387,7 @@ The following functionality has been successfully tested.
 ## Side View
 
 <p align="center">
-<img src="images/Nico_Side view.jpeg" width="650">
+<img src="images/side-view.jpeg" width="650">
 </p>
 
 ---
@@ -395,7 +395,7 @@ The following functionality has been successfully tested.
 ## Top View
 
 <p align="center">
-<img src="images/Nico_Top View.jpeg" width="650">
+<img src="images/top-view.jpeg" width="650">
 </p>
 
 ---
@@ -403,7 +403,7 @@ The following functionality has been successfully tested.
 ## Bottom View
 
 <p align="center">
-<img src="images/Nico_Lower view.jpeg" width="650">
+<img src="images/bottom-view.jpeg" width="650">
 </p>
 
 ---
@@ -437,7 +437,7 @@ The following functionality has been successfully tested.
 # 🔌 Circuit Diagram
 
 <p align="center">
-<img src="images/Circuit Diagram.png" width="900">
+<img src="images/circuit-diagram.png" width="900">
 </p>
 
 ---
@@ -729,7 +729,7 @@ If this repository helped you learn something new, please consider supporting th
 
 ### Engineering Ideas Into Intelligent Machines
 
-<img src="images/nico_OS.png" width="180">
+<img src="images/nico_OS.png" width="180" alt="Nico OS Logo">
 
 ---
 
