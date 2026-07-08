@@ -1,0 +1,82 @@
+[
+  {
+    "label": "M3 bolts and nuts",
+    "source": "left_front_bo_motor_mount",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "M3 bolts and nuts",
+    "source": "right_front_bo_motor_mount",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "M3 bolts and nuts",
+    "source": "left_rear_bo_motor_mount",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "M3 bolts and nuts",
+    "source": "right_rear_bo_motor_mount",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "M3 bolts and nuts",
+    "source": "esp32_dev_module_mount",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "M3 bolts and nuts",
+    "source": "l298n_motor_driver_mount",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "M3 bolts and nuts",
+    "source": "oled_display_mount",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "M3 bolts and nuts",
+    "source": "battery_18650_series_holder",
+    "target": "robot_chassis_base_plate"
+  },
+  {
+    "label": "mount",
+    "source": "esp32_dev_module_mount",
+    "target": "esp32_dev_module"
+  },
+  {
+    "label": "mount",
+    "source": "l298n_motor_driver_mount",
+    "target": "motor_driver"
+  },
+  {
+    "label": "mount",
+    "source": "oled_display_mount",
+    "target": "oled_display"
+  },
+  {
+    "label": "mount",
+    "source": "battery_18650_series_holder",
+    "target": "battery_18650_1"
+  },
+  {
+    "label": "mount",
+    "source": "left_front_bo_motor_mount",
+    "target": "left_front_dc_motor"
+  },
+  {
+    "label": "mount",
+    "source": "right_front_bo_motor_mount",
+    "target": "right_front_dc_motor"
+  },
+  {
+    "label": "mount",
+    "source": "left_rear_bo_motor_mount",
+    "target": "left_rear_dc_motor"
+  },
+  {
+    "label": "mount",
+    "source": "right_rear_bo_motor_mount",
+    "target": "right_rear_dc_motor"
+  }
+]

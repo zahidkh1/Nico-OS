@@ -1,0 +1,202 @@
+[
+  {
+    "type": "power",
+    "label": "Batteries in series",
+    "source": "battery_18650_1",
+    "target": "battery_18650_2",
+    "current": "500mA",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Motor Driver VCC",
+    "source": "battery_18650_1",
+    "target": "motor_driver",
+    "current": "2A",
+    "voltage": "7.4V"
+  },
+  {
+    "type": "power",
+    "label": "Motor Driver GND",
+    "source": "battery_18650_2",
+    "target": "motor_driver",
+    "current": "2A",
+    "voltage": "7.4V"
+  },
+  {
+    "type": "power",
+    "label": "ESP32 Vin (5V regulator)",
+    "source": "battery_18650_1",
+    "target": "esp32_dev_module",
+    "current": "500mA",
+    "voltage": "7.4V"
+  },
+  {
+    "type": "power",
+    "label": "ESP32 GND",
+    "source": "battery_18650_2",
+    "target": "esp32_dev_module",
+    "current": "500mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "power",
+    "label": "OLED VCC",
+    "source": "esp32_dev_module",
+    "target": "oled_display",
+    "current": "20mA",
+    "voltage": "3.3V"
+  },
+  {
+    "type": "power",
+    "label": "OLED GND",
+    "source": "esp32_dev_module",
+    "target": "oled_display",
+    "current": "20mA",
+    "voltage": "0V"
+  },
+  {
+    "type": "data",
+    "label": "Motor Enable A",
+    "source": "esp32_dev_module",
+    "target": "motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO14",
+    "targetPin": "ENA"
+  },
+  {
+    "type": "data",
+    "label": "Motor A Input 1",
+    "source": "esp32_dev_module",
+    "target": "motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO27",
+    "targetPin": "IN1"
+  },
+  {
+    "type": "data",
+    "label": "Motor A Input 2",
+    "source": "esp32_dev_module",
+    "target": "motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO26",
+    "targetPin": "IN2"
+  },
+  {
+    "type": "data",
+    "label": "Motor B Input 1",
+    "source": "esp32_dev_module",
+    "target": "motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO25",
+    "targetPin": "IN3"
+  },
+  {
+    "type": "data",
+    "label": "Motor B Input 2",
+    "source": "esp32_dev_module",
+    "target": "motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO33",
+    "targetPin": "IN4"
+  },
+  {
+    "type": "data",
+    "label": "Motor Enable B",
+    "source": "esp32_dev_module",
+    "target": "motor_driver",
+    "protocol": "gpio",
+    "sourcePin": "GPIO32",
+    "targetPin": "ENB"
+  },
+  {
+    "type": "data",
+    "label": "Left Motor Front (+)",
+    "source": "motor_driver",
+    "target": "left_front_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT1",
+    "targetPin": "M+"
+  },
+  {
+    "type": "data",
+    "label": "Left Motor Front (-)",
+    "source": "motor_driver",
+    "target": "left_front_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT2",
+    "targetPin": "M-"
+  },
+  {
+    "type": "data",
+    "label": "Left Motor Rear (+)",
+    "source": "motor_driver",
+    "target": "left_rear_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT1",
+    "targetPin": "M+"
+  },
+  {
+    "type": "data",
+    "label": "Left Motor Rear (-)",
+    "source": "motor_driver",
+    "target": "left_rear_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT2",
+    "targetPin": "M-"
+  },
+  {
+    "type": "data",
+    "label": "Right Motor Front (+)",
+    "source": "motor_driver",
+    "target": "right_front_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT3",
+    "targetPin": "M+"
+  },
+  {
+    "type": "data",
+    "label": "Right Motor Front (-)",
+    "source": "motor_driver",
+    "target": "right_front_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT4",
+    "targetPin": "M-"
+  },
+  {
+    "type": "data",
+    "label": "Right Motor Rear (+)",
+    "source": "motor_driver",
+    "target": "right_rear_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT3",
+    "targetPin": "M+"
+  },
+  {
+    "type": "data",
+    "label": "Right Motor Rear (-)",
+    "source": "motor_driver",
+    "target": "right_rear_dc_motor",
+    "protocol": "gpio",
+    "sourcePin": "OUT4",
+    "targetPin": "M-"
+  },
+  {
+    "type": "data",
+    "label": "OLED I2C SDA",
+    "source": "esp32_dev_module",
+    "target": "oled_display",
+    "protocol": "i2c",
+    "sourcePin": "GPIO21",
+    "targetPin": "SDA"
+  },
+  {
+    "type": "data",
+    "label": "OLED I2C SCL",
+    "source": "esp32_dev_module",
+    "target": "oled_display",
+    "protocol": "i2c",
+    "sourcePin": "GPIO22",
+    "targetPin": "SCL"
+  }
+]

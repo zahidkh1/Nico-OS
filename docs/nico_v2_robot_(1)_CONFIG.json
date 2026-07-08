@@ -1,0 +1,1452 @@
+{
+  "plan": "- ESP32-WROOM-32 microcontroller, L298N motor driver, SSD1306 OLED display, 2x 18650 Li-ion batteries (7.4V nominal).\n- Four BO DC motors for differential drive, connected to the L298N.\n- Robot chassis/frame, four wheels, and necessary mounting hardware for components.\n- Custom 3D-printed brackets for ESP32, L298N, OLED, and battery holder integration.\n- Wiring harnesses for power distribution, motor control, and I2C communication lines.",
+  "nodes": [
+    {
+      "id": "esp32_dev_module",
+      "name": "Main Controller",
+      "pins": [
+        "GPIO14",
+        "GPIO27",
+        "GPIO26",
+        "GPIO25",
+        "GPIO33",
+        "GPIO32",
+        "GPIO21",
+        "GPIO22"
+      ],
+      "type": "mcu",
+      "partId": "d371bf64-f23a-4427-987e-d8301eab2575",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=ESP32-WROOM-32+Dev+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/1rJGn21Wrf2J7_Agbi16XQ-8ReMTjmfeyiJE8COUGno/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9iLnRo/dW1icy5yZWRkaXRt/ZWRpYS5jb20vTXVD/dlBGR2RONlhDWXdP/RDNrTTBNNnRuQnNr/MzR0eEFPdkxNbWJk/TW9Mcy5qcGc",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "VIN,GND,3V3,TXD0,RXD0,GPIO21,GPIO22,GPIO19,GPIO18,GPIO17,GPIO16,GPIO5,GPIO4"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0C7C2HQ7P?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "55x28x13mm",
+      "description": "Real-time microcontroller for precise stepper motor control and endstop sensor monitoring.",
+      "productName": "ESP32-WROOM-32 Dev Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=ESP32-WROOM-32+Dev+Module",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfzrtKA0Z8uWh67aYDfODFzQi7PTprGyv0PRprp9ysbVND1LwjtMXLvPim92qg11eswGLoek8qoVHWFLJ8SKFobGPGiJllOPfvZktLhkM491iixhhIVx3TglXV6W6R3kOY9S0wUmQgcUsEJJTrNgelbAfNW9L4KVrpIVDQDxPmqn2uy0MiBZsl6IixzUei7x41Ixsor6BKOVet3JOTdbL1kPzs2lIf8FecJsKvgI61PkrZS36Z2sqnKxZt37eRcALnIkHIBM5VyUcZCXSSoJktqMeY8ImsLxP3yvFRAIXbGJDxBp6ybQjdeaMgSHiIWYDRBeNkgXLnh1ripTAX0C2NsIDaTOARvnSHAHreeysZIMJn34KqOCPYUCaiU5lVKDh4OewyfzLJh9yFRI3HmZkT1daRMKSP2IeHWJqdhUTj9vSbl5W51fHemnV7QyHyaDIDp4aNsn8eunjDTBfZDj7sgC9p6ZZTtLnrxiJXkN1xOZuYC7EBEZL7nLPCsL3E9UNUWZfusYUdJo1ojO6Jrs23ELztntILdVEsCYrTjBcASDL2wxzxTQG3Wf6KFYMnL7KhQYwu7L4qtykv4v4HCu7cQ9ZBj20FeVyDMXKUVerBlsVX8mobqTjerit4uM833GCjClWQ1M5HP71mWlJswixTkr",
+      "estimatedCost": 12
+    },
+    {
+      "id": "motor_driver",
+      "name": "Motor Driver",
+      "pins": [
+        "ENA",
+        "IN1",
+        "IN2",
+        "IN3",
+        "IN4",
+        "ENB",
+        "OUT1",
+        "OUT2",
+        "OUT3",
+        "OUT4",
+        "VCC",
+        "GND"
+      ],
+      "type": "module",
+      "partId": "1bacee1d-5ede-4185-b083-11300be27de5",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=L298N+Motor+Driver+Module&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51ZsU6wMlSL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "ENA,IN1,IN2,IN3,IN4,ENB,OUT1,OUT2,OUT3,OUT4,VCC,GND"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://projecthub.arduino.cc/hibit/how-to-use-the-l298n-motor-driver-module-0bb697",
+            "title": "Arduino Project Hub",
+            "description": "This module allows you to independently manage two motors of up to 2A each in both directions. Supply range may vary between 5V and 35V, enough for most DC motor projects."
+          },
+          {
+            "url": "https://www.hibit.dev/posts/89/how-to-use-the-l298n-motor-driver-module",
+            "title": "HiBit",
+            "description": "Simple Arduino code example for controlling two DC motors with the L298N module without requiring any external library."
+          },
+          {
+            "url": "https://gist.github.com/elktros/440391fc1c5e921a165c614d407cad51",
+            "title": "GitHub Gist",
+            "description": "Python script for interfacing the L298N Motor Driver Module with Raspberry Pi."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.sparkfun.com/sparkfun-full-bridge-motor-driver-breakout-l298n.html",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0CR6BX5QL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/result?keywords=L298N+Motor+Driver+Module",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.mouser.com/Search/Refine?Keyword=L298+Motor+Driver",
+            "vendor": "Mouser"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006365803938.html?pdp_npi=6%40dis%21USD%218.35%214.09%21%21%2156.58%2127.72%21%402141149b17793261333913321e1092%2112000036911879880%21affd%21%21%21%211%210%21",
+            "price": "$4.09",
+            "vendor": "AliExpress"
+          }
+        ],
+        "datasheetUrl": "https://components101.com/sites/default/files/component_datasheet/L298N-Motor-Driver-Datasheet.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://docs.sunfounder.com/projects/sf-components/en/latest/component_l298n_module.html",
+            "type": "docs",
+            "title": "SunFounder"
+          },
+          {
+            "url": "https://github.com/YorkURobotics/l298n-module-simple-lib",
+            "type": "repo",
+            "title": "GitHub"
+          },
+          {
+            "url": "https://github.com/shirokunet/ESP32_L298N",
+            "type": "repo",
+            "title": "GitHub"
+          },
+          {
+            "url": "https://github.com/YogeshwaranP-05/Arduino-L298N-Motor-Driver",
+            "type": "repo",
+            "title": "GitHub"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CR6BX5QL?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "43x43x27mm",
+      "description": "Dual H-bridge motor driver to control two DC motors.",
+      "productName": "L298N Motor Driver Module",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxfu1X4SjBC1MNh6eF0ffUbyKSMnbBYNdt460px4Y1eJzVfHIvQW41v5C4khRItR9RkvFY2HOCbEzuUrXYw10N8KezpIyA8gHn067LimR3VPVohmZvBiEboBMqPTpiVQJ5Dy59tvbNVgIMKN9Uhls1Hfk0bQsC005VXYz6MpoykarxvZKVds9hCOu4WE3ig8VZLXRTl53bH4D607ITLLtAHOu1YVoDqAwxysdeKxLEjHLWUdN0VDv0NJrRbpFyF9YFgxtyNKaau4lOccEgoZtoHBke6wMt7t0OKEBprAYkgVz0GdCQxIqqzYS6plAObuke8DoUUtCCp1R2obTE7x7Zbzl1iA3UUfOzzeTpXzAB3fTwC13XqvZRQVshxe5ffqvnvMD1OJyZGKfEHtwCzF2TNu1hndSrCuxngAoBi73kAlGC1tLp0fti5FdBdhjUZF8Kq2alHx0BMLB1OCw6G7GldWiHHZ33pnyn7rQ9EEnCxeQy67G5mG95ne52IPFKkZKnU0MlHA1Zwh9zo6L9Ab2iDg3stAkKAVxmzPUEVdpU4K1eF6eTRwoptExe0qmfO5OD39lZ4U03dHIWpvNyLfanssKt2vwJjbAbGLJSRrpgAUAENV7onZ7v6SoEGysFFW0w5k2bIDrb8Y7KYFVhifhc2aR",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0Jxfu1X4SjBC1MNh6eF0ffUbyKSMnbBYNdt460px4Y1eJzVfHIvQW41v5C4khRItR9RkvFY2HOCbEzuUrXYw10N8KezpIyA8gHn067LimR3VPVohmZvBiEboBMqPTpiVQJ5Dy59tvbNVgIMKN9Uhls1Hfk0bQsC005VXYz6MpoykarxvZKVds9hCOu4WE3ig8VZLXRTl53bH4D607ITLLtAHOu1YVoDqAwxysdeKxLEjHLWUdN0VDv0NJrRbpFyF9YFgxtyNKaau4lOccEgoZtoHBke6wMt7t0OKEBprAYkgVz0GdCQxIqqzYS6plAObuke8DoUUtCCp1R2obTE7x7Zbzl1iA3UUfOzzeTpXzAB3fTwC13XqvZRQVshxe5ffqvnvMD1OJyZGKfEHtwCzF2TNu1hndSrCuxngAoBi73kAlGC1tLp0fti5FdBdhjUZF8Kq2alHx0BMLB1OCw6G7GldWiHHZ33pnyn7rQ9EEnCxeQy67G5mG95ne52IPFKkZKnU0MlHA1Zwh9zo6L9Ab2iDg3stAkKAVxmzPUEVdpU4K1eF6eTRwoptExe0qmfO5OD39lZ4U03dHIWpvNyLfanssKt2vwJjbAbGLJSRrpgAUAENV7onZ7v6SoEGysFFW0w5k2bIDrb8Y7KYFVhifhc2aR",
+      "estimatedCost": 7
+    },
+    {
+      "id": "left_front_dc_motor",
+      "name": "Left Front DC Motor",
+      "pins": [
+        "M+",
+        "M-"
+      ],
+      "type": "actuator",
+      "partId": "498f1380-7623-4339-a5dc-506a8276deaf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BO+Motor+%28Gear+Motor%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41mHYiViuOL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005009295288188.html?pdp_npi=6%40dis%21USD%212.13%212.11%21%21%2114.31%2114.17%21%402140d36117800702573082492e0f56%2112000048648140639%21affd%21%21%21%211%210%21",
+            "price": "$2.11",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0G2BNVRV7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$27.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x37x22mm",
+      "description": "Geared DC motor used to rotate the solar panel along a single axis.",
+      "productName": "BO Motor (Gear Motor)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "estimatedCost": 3
+    },
+    {
+      "id": "left_rear_dc_motor",
+      "name": "Left Rear DC Motor",
+      "pins": [
+        "M+",
+        "M-"
+      ],
+      "type": "actuator",
+      "partId": "498f1380-7623-4339-a5dc-506a8276deaf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BO+Motor+%28Gear+Motor%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41mHYiViuOL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005009295288188.html?pdp_npi=6%40dis%21USD%212.13%212.11%21%21%2114.31%2114.17%21%402140d36117800702573082492e0f56%2112000048648140639%21affd%21%21%21%211%210%21",
+            "price": "$2.11",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0G2BNVRV7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$27.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x37x22mm",
+      "description": "Geared DC motor used to rotate the solar panel along a single axis.",
+      "productName": "BO Motor (Gear Motor)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "estimatedCost": 3
+    },
+    {
+      "id": "right_front_dc_motor",
+      "name": "Right Front DC Motor",
+      "pins": [
+        "M+",
+        "M-"
+      ],
+      "type": "actuator",
+      "partId": "498f1380-7623-4339-a5dc-506a8276deaf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BO+Motor+%28Gear+Motor%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41mHYiViuOL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005009295288188.html?pdp_npi=6%40dis%21USD%212.13%212.11%21%21%2114.31%2114.17%21%402140d36117800702573082492e0f56%2112000048648140639%21affd%21%21%21%211%210%21",
+            "price": "$2.11",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0G2BNVRV7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$27.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x37x22mm",
+      "description": "Geared DC motor used to rotate the solar panel along a single axis.",
+      "productName": "BO Motor (Gear Motor)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "estimatedCost": 3
+    },
+    {
+      "id": "right_rear_dc_motor",
+      "name": "Right Rear DC Motor",
+      "pins": [
+        "M+",
+        "M-"
+      ],
+      "type": "actuator",
+      "partId": "498f1380-7623-4339-a5dc-506a8276deaf",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=BO+Motor+%28Gear+Motor%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41mHYiViuOL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005009295288188.html?pdp_npi=6%40dis%21USD%212.13%212.11%21%21%2114.31%2114.17%21%402140d36117800702573082492e0f56%2112000048648140639%21affd%21%21%21%211%210%21",
+            "price": "$2.11",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0G2BNVRV7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$27.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0DP439JSX?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x37x22mm",
+      "description": "Geared DC motor used to rotate the solar panel along a single axis.",
+      "productName": "BO Motor (Gear Motor)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxHN7hAzXqsHwgGqvnuhDVPrfcIKzP7XefPu7cE94bF1cT1gwFhKsmRIRGcwfExwFJpqcfCxKa3OqfMN90CmcINMFgA79SfO7rXfjur9ZcOkNw71lmwYCy1AZREWHFQqOjaZsOTI2Q2btTj4VoqMqWACSEusfI5bGlQy9wem2J83XxXBk6RC4RDcoDGIHmgOarPQHQxTjSN1UopzNevMgGsLKGyKk2yAtC6CpKzqzYzSPZgAHS57q5qeFahzkK11HhF7vVKtmFLdCuy4ySABxVpFWzRNfXqjVZV7AwR5vmmGR5MV3ejYtGdt7eznji6rsb2EPjZwumKzfgdIrd0jV7gTgNHhavrOJDq7zZyVsBSXPDG1YKHnCdynHBYjUcxzs7huqcp63EWnSpvTGOqOdV8Msca7qCy3vZRsQxIDkK93SrDAQTkglglE81CvrVvjRbAeRuKYvnojVnTIC6m9YLkSzfsjnBYqUnib7syk5OrekQPpvx5b0X6bq4IjuXMTj5tWaYvv3f9GmnZkOEFZVkWaZbEIks2f2eaEIwzzfPFFbiIAfuFIzhkJRqW1R3pkasNgmj6UD8lpT0ial8OYmEx2Az6Q91Vzfdm89ua4FWN5SnvJ8DFjCtApWaGtd4KhzQoT0LTOQC94xtwngmjPnYVon",
+      "estimatedCost": 3
+    },
+    {
+      "id": "battery_18650_1",
+      "name": "Battery 1",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "power",
+      "partId": "0ec33633-f7c4-4ffc-8ca6-f73072243894",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=18650+Li-ion+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31mZ+zlnJJL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "+,-"
+          },
+          {
+            "label": "protection",
+            "value": "Available with or without integrated protection circuitry"
+          },
+          {
+            "label": "nominal_voltage",
+            "value": "3.6V-3.7V"
+          },
+          {
+            "label": "typical_capacity",
+            "value": "2200mAh-3500mAh"
+          },
+          {
+            "label": "battery_chemistry",
+            "value": "Lithium-Ion (Li-Ion)"
+          },
+          {
+            "label": "dimensions_length",
+            "value": "65 \n±\n 0.25mm"
+          },
+          {
+            "label": "dimensions_diameter",
+            "value": "18 \n±\n 0.41mm"
+          },
+          {
+            "label": "rechargeable_cycles",
+            "value": "300+ typical"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://circuitdigest.com/microcontroller-project/diy-18650-li-ion-battery-capacity-and-discharge-testing-meter-using-arduino",
+            "title": "DIY 18650 Li-Ion Battery Capacity and Discharge Testing Meter using Arduino",
+            "description": "A project demonstrating how to build an Arduino-based meter to test the capacity and discharge characteristics of an 18650 Li-ion battery."
+          },
+          {
+            "url": "https://regentelectronics.com/microcontrollers/how-to-power-arduino-nano-with-battery",
+            "title": "How to Power Arduino Nano with Battery",
+            "description": "A step-by-step guide on how to properly power an Arduino Nano using an 18650 Li-ion battery and a suitable battery holder."
+          },
+          {
+            "url": "https://forum.arduino.cc/t/how-to-power-esp8266-ch304-with-18650-li-ion-battery/1179338",
+            "title": "How to power ESP8266 with 18650 Li-ion battery",
+            "description": "Discussion and guidance on connecting and powering an ESP8266 module, along with sensors and actuators, using an 18650 Li-ion battery."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/18650-li-ion-rechargeable-battery/s?k=18650+li+ion+rechargeable+battery",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0H14WX1QF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/us-electronics-inc/USE-18650-3500PCB/15998173",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/us-electronics-inc/USE-18650-2600PCBJST/15781482",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.sparkfun.com/lithium-ion-battery-18650-cell-2600mah.html",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.sparkfun.com/lithium-ion-battery-18650-cell-2600mah-solder-tab.html",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/adafruit-industries-llc/1781/5054543",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006043031985.html?pdp_npi=6%40dis%21USD%216.21%212.95%21%21%2142.00%2119.97%21%402151fd2c17794335919963243e0e4b%2112000035475416223%21affd%21%21%21%211%210%21",
+            "price": "$2.95",
+            "vendor": "AliExpress"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library/18650-li-ion-battery",
+            "label": "18650 Li-ion Battery (STEP)"
+          },
+          {
+            "url": "https://www.dropbox.com/s/r3l1jtie0zo27mv/holder.zip",
+            "label": "18650 Battery Holder + Battery (STEP)"
+          },
+          {
+            "url": "https://www.3dcontentcentral.com/Download-Model.aspx?catalogid=171&id=786954",
+            "label": "18650 Li-ion Battery Packs (various configurations) (STEP)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "LiPo (Lithium Polymer) Battery",
+            "reason": "Offers greater flexibility in form factor and potentially higher discharge rates for specific applications, though often more delicate."
+          },
+          {
+            "name": "AA/AAA NiMH Rechargeable Batteries",
+            "reason": "Lower voltage (1.2V per cell) and generally lower energy density, but widely available and often safer with simpler charging requirements."
+          },
+          {
+            "name": "Larger capacity 21700 Li-ion Battery",
+            "reason": "Similar chemistry and form factor to 18650 but offers higher capacity and often higher discharge rates due to its larger size (21mm diameter, 70mm length)."
+          }
+        ],
+        "datasheetUrl": "https://www.mouser.com/datasheet/2/855/ASR00050_18650_2500mAh-3078640.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://docs.cirkitdesigner.com/component/5d6d7161-d92c-850c-8b92-82fe8c4791de/li-ion-18650-battery",
+            "title": "How to Use Li-ion 18650 Battery: Pinouts, Specs, and Examples"
+          },
+          {
+            "url": "https://www.instructables.com/How-to-Make-a-18650-Li-ion-Battery-Pack/",
+            "title": "How to Make a 18650 Li-ion Battery Pack!"
+          },
+          {
+            "url": "https://nematicslab.com/how-to-make-18650-li-ion-battery-pack-diy/",
+            "title": "How to make Li-ion Battery Pack | 18650 - NematicsLab Guide"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0H14WX1QF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x18x18mm",
+      "description": "Rechargeable lithium-ion battery for main power supply.",
+      "productName": "18650 Li-ion Battery",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfJ5fNcuPn70f8Nuiu9RNCG5qmk5Izv7ASEfrThVI1diOE0CrFJJ57Ex6MfbtS2DwDSVzT2jGNU4fWQamcWgmU4NdrHz3m9kgDy5SBr8WblpGLqvcGtkfB9oWvG0q81LsuNVftNdLonrD24umPvWtEHBCLjE9PHSm8l6CO19gX9EDnKlofuhXAIbh4GwYIfyQjFVE9Lly479sFFbODRsWRRbdITdCK31g3NyOLUxUP5Ha1JGNgWdpBGuqp2T13I9q0ZR0SkwcgWhHSTA3AWIyi3CEAV9t7vUGgaNe4Qn7CGc9FidM3yhuzBCJGYxRqJIDuPIXARzI2bPbkPQdhjIK668axu2l3LAYTZ1cCncAmOJgxlClGrD4jrLPiEBAGsEhqPKc3zxvuLY9rhr8MqgZ9oPWDhX4dfsdnoH0JZusSlfgNw9coV1pPeuowMN9UEnnDmDOJzIFHyUnFWIlAbf7AurIxwCqqZwqjKDQqutq17XtUJJYnLu40f0T9XIqGr37ax3a7hxpUfF2J9wDgdj7NAa7KKycx51llneHLaNLD00YBFEqadKp7cxHaT4XcKCXTinqn0GtFD1bAzLglwk6mGT8AoEEE4MlNUA5zYU1bIK16H3q4mLtOuA2MSx1tm7gbAVLobt1hUgmmW0sJZTBwjv",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfJ5fNcuPn70f8Nuiu9RNCG5qmk5Izv7ASEfrThVI1diOE0CrFJJ57Ex6MfbtS2DwDSVzT2jGNU4fWQamcWgmU4NdrHz3m9kgDy5SBr8WblpGLqvcGtkfB9oWvG0q81LsuNVftNdLonrD24umPvWtEHBCLjE9PHSm8l6CO19gX9EDnKlofuhXAIbh4GwYIfyQjFVE9Lly479sFFbODRsWRRbdITdCK31g3NyOLUxUP5Ha1JGNgWdpBGuqp2T13I9q0ZR0SkwcgWhHSTA3AWIyi3CEAV9t7vUGgaNe4Qn7CGc9FidM3yhuzBCJGYxRqJIDuPIXARzI2bPbkPQdhjIK668axu2l3LAYTZ1cCncAmOJgxlClGrD4jrLPiEBAGsEhqPKc3zxvuLY9rhr8MqgZ9oPWDhX4dfsdnoH0JZusSlfgNw9coV1pPeuowMN9UEnnDmDOJzIFHyUnFWIlAbf7AurIxwCqqZwqjKDQqutq17XtUJJYnLu40f0T9XIqGr37ax3a7hxpUfF2J9wDgdj7NAa7KKycx51llneHLaNLD00YBFEqadKp7cxHaT4XcKCXTinqn0GtFD1bAzLglwk6mGT8AoEEE4MlNUA5zYU1bIK16H3q4mLtOuA2MSx1tm7gbAVLobt1hUgmmW0sJZTBwjv",
+      "estimatedCost": 5
+    },
+    {
+      "id": "battery_18650_2",
+      "name": "Battery 2",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "power",
+      "partId": "0ec33633-f7c4-4ffc-8ca6-f73072243894",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=18650+Li-ion+Battery&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31mZ+zlnJJL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "pins",
+            "value": "+,-"
+          },
+          {
+            "label": "protection",
+            "value": "Available with or without integrated protection circuitry"
+          },
+          {
+            "label": "nominal_voltage",
+            "value": "3.6V-3.7V"
+          },
+          {
+            "label": "typical_capacity",
+            "value": "2200mAh-3500mAh"
+          },
+          {
+            "label": "battery_chemistry",
+            "value": "Lithium-Ion (Li-Ion)"
+          },
+          {
+            "label": "dimensions_length",
+            "value": "65 \n±\n 0.25mm"
+          },
+          {
+            "label": "dimensions_diameter",
+            "value": "18 \n±\n 0.41mm"
+          },
+          {
+            "label": "rechargeable_cycles",
+            "value": "300+ typical"
+          }
+        ],
+        "examples": [
+          {
+            "url": "https://circuitdigest.com/microcontroller-project/diy-18650-li-ion-battery-capacity-and-discharge-testing-meter-using-arduino",
+            "title": "DIY 18650 Li-Ion Battery Capacity and Discharge Testing Meter using Arduino",
+            "description": "A project demonstrating how to build an Arduino-based meter to test the capacity and discharge characteristics of an 18650 Li-ion battery."
+          },
+          {
+            "url": "https://regentelectronics.com/microcontrollers/how-to-power-arduino-nano-with-battery",
+            "title": "How to Power Arduino Nano with Battery",
+            "description": "A step-by-step guide on how to properly power an Arduino Nano using an 18650 Li-ion battery and a suitable battery holder."
+          },
+          {
+            "url": "https://forum.arduino.cc/t/how-to-power-esp8266-ch304-with-18650-li-ion-battery/1179338",
+            "title": "How to power ESP8266 with 18650 Li-ion battery",
+            "description": "Discussion and guidance on connecting and powering an ESP8266 module, along with sensors and actuators, using an 18650 Li-ion battery."
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/18650-li-ion-rechargeable-battery/s?k=18650+li+ion+rechargeable+battery",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0H14WX1QF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/us-electronics-inc/USE-18650-3500PCB/15998173",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/us-electronics-inc/USE-18650-2600PCBJST/15781482",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://www.sparkfun.com/lithium-ion-battery-18650-cell-2600mah.html",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.sparkfun.com/lithium-ion-battery-18650-cell-2600mah-solder-tab.html",
+            "vendor": "SparkFun"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/adafruit-industries-llc/1781/5054543",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006043031985.html?pdp_npi=6%40dis%21USD%216.21%212.95%21%21%2142.00%2119.97%21%402151fd2c17794335919963243e0e4b%2112000035475416223%21affd%21%21%21%211%210%21",
+            "price": "$2.95",
+            "vendor": "AliExpress"
+          }
+        ],
+        "cadFileUrls": [
+          {
+            "url": "https://grabcad.com/library/18650-li-ion-battery",
+            "label": "18650 Li-ion Battery (STEP)"
+          },
+          {
+            "url": "https://www.dropbox.com/s/r3l1jtie0zo27mv/holder.zip",
+            "label": "18650 Battery Holder + Battery (STEP)"
+          },
+          {
+            "url": "https://www.3dcontentcentral.com/Download-Model.aspx?catalogid=171&id=786954",
+            "label": "18650 Li-ion Battery Packs (various configurations) (STEP)"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "LiPo (Lithium Polymer) Battery",
+            "reason": "Offers greater flexibility in form factor and potentially higher discharge rates for specific applications, though often more delicate."
+          },
+          {
+            "name": "AA/AAA NiMH Rechargeable Batteries",
+            "reason": "Lower voltage (1.2V per cell) and generally lower energy density, but widely available and often safer with simpler charging requirements."
+          },
+          {
+            "name": "Larger capacity 21700 Li-ion Battery",
+            "reason": "Similar chemistry and form factor to 18650 but offers higher capacity and often higher discharge rates due to its larger size (21mm diameter, 70mm length)."
+          }
+        ],
+        "datasheetUrl": "https://www.mouser.com/datasheet/2/855/ASR00050_18650_2500mAh-3078640.pdf",
+        "documentationUrls": [
+          {
+            "url": "https://docs.cirkitdesigner.com/component/5d6d7161-d92c-850c-8b92-82fe8c4791de/li-ion-18650-battery",
+            "title": "How to Use Li-ion 18650 Battery: Pinouts, Specs, and Examples"
+          },
+          {
+            "url": "https://www.instructables.com/How-to-Make-a-18650-Li-ion-Battery-Pack/",
+            "title": "How to Make a 18650 Li-ion Battery Pack!"
+          },
+          {
+            "url": "https://nematicslab.com/how-to-make-18650-li-ion-battery-pack-diy/",
+            "title": "How to make Li-ion Battery Pack | 18650 - NematicsLab Guide"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0H14WX1QF?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x18x18mm",
+      "description": "Rechargeable lithium-ion battery for main power supply.",
+      "productName": "18650 Li-ion Battery",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfJ5fNcuPn70f8Nuiu9RNCG5qmk5Izv7ASEfrThVI1diOE0CrFJJ57Ex6MfbtS2DwDSVzT2jGNU4fWQamcWgmU4NdrHz3m9kgDy5SBr8WblpGLqvcGtkfB9oWvG0q81LsuNVftNdLonrD24umPvWtEHBCLjE9PHSm8l6CO19gX9EDnKlofuhXAIbh4GwYIfyQjFVE9Lly479sFFbODRsWRRbdITdCK31g3NyOLUxUP5Ha1JGNgWdpBGuqp2T13I9q0ZR0SkwcgWhHSTA3AWIyi3CEAV9t7vUGgaNe4Qn7CGc9FidM3yhuzBCJGYxRqJIDuPIXARzI2bPbkPQdhjIK668axu2l3LAYTZ1cCncAmOJgxlClGrD4jrLPiEBAGsEhqPKc3zxvuLY9rhr8MqgZ9oPWDhX4dfsdnoH0JZusSlfgNw9coV1pPeuowMN9UEnnDmDOJzIFHyUnFWIlAbf7AurIxwCqqZwqjKDQqutq17XtUJJYnLu40f0T9XIqGr37ax3a7hxpUfF2J9wDgdj7NAa7KKycx51llneHLaNLD00YBFEqadKp7cxHaT4XcKCXTinqn0GtFD1bAzLglwk6mGT8AoEEE4MlNUA5zYU1bIK16H3q4mLtOuA2MSx1tm7gbAVLobt1hUgmmW0sJZTBwjv",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxfJ5fNcuPn70f8Nuiu9RNCG5qmk5Izv7ASEfrThVI1diOE0CrFJJ57Ex6MfbtS2DwDSVzT2jGNU4fWQamcWgmU4NdrHz3m9kgDy5SBr8WblpGLqvcGtkfB9oWvG0q81LsuNVftNdLonrD24umPvWtEHBCLjE9PHSm8l6CO19gX9EDnKlofuhXAIbh4GwYIfyQjFVE9Lly479sFFbODRsWRRbdITdCK31g3NyOLUxUP5Ha1JGNgWdpBGuqp2T13I9q0ZR0SkwcgWhHSTA3AWIyi3CEAV9t7vUGgaNe4Qn7CGc9FidM3yhuzBCJGYxRqJIDuPIXARzI2bPbkPQdhjIK668axu2l3LAYTZ1cCncAmOJgxlClGrD4jrLPiEBAGsEhqPKc3zxvuLY9rhr8MqgZ9oPWDhX4dfsdnoH0JZusSlfgNw9coV1pPeuowMN9UEnnDmDOJzIFHyUnFWIlAbf7AurIxwCqqZwqjKDQqutq17XtUJJYnLu40f0T9XIqGr37ax3a7hxpUfF2J9wDgdj7NAa7KKycx51llneHLaNLD00YBFEqadKp7cxHaT4XcKCXTinqn0GtFD1bAzLglwk6mGT8AoEEE4MlNUA5zYU1bIK16H3q4mLtOuA2MSx1tm7gbAVLobt1hUgmmW0sJZTBwjv",
+      "estimatedCost": 5
+    },
+    {
+      "id": "oled_display",
+      "name": "OLED Display",
+      "pins": [
+        "VCC",
+        "GND",
+        "SCL",
+        "SDA"
+      ],
+      "type": "display",
+      "partId": "6f7046ba-1716-42a0-ac8f-f8bce827d3a0",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=0.91%22%2F0.96%22+I2C+OLED+Display+%28SSD1306%2C+128x64%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41BBPcEHFXL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0CDWXFCN2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$9.49",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-0-49-inch-64x32-i2c-oled-module-e-g-ssd1306-driver.html",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FHB16123?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.19",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0CDWXFCN2?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "30x30x4mm",
+      "productName": "0.91\"/0.96\" I2C OLED Display (SSD1306, 128x64)",
+      "purchaseUrl": "https://www.amazon.com/dp/B0FHB16123?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3uSWZYh",
+      "estimatedCost": 6
+    },
+    {
+      "id": "robot_chassis_base_plate",
+      "name": "Chassis Base Plate",
+      "type": "structural",
+      "partId": "1eb8c53c-76fa-4a16-8750-99e2b1dd1970",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Acrylic+Robot+Chassis+Plate&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/2944-00.jpg",
+      "material": "Acrylic",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0BYF3J85L?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$22.39",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005009164047773.html?pdp_npi=6%40dis%21USD%215.36%215.36%21%21%215.36%215.36%21%402140da8b17794290896031758e0eea%2112000048161412332%21affd%21%21%21%211%210%21",
+            "price": "$5.36",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/2944",
+            "price": "$4.95",
+            "vendor": "Adafruit"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B01LXY7CM3?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$13.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0FL6JTHMQ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$15.97",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0H2W33T3Q?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$27.09",
+            "vendor": "Amazon"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/2944",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BYF3J85L?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "150x100x3mm",
+      "description": "Main base plate for the robot chassis, providing a mounting surface for all components.",
+      "productName": "Acrylic Robot Chassis Plate",
+      "purchaseUrl": "https://www.adafruit.com/product/2944",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR5m5RK5zC4d3PLKIKSW1NhbEx2cS16bdVQRN0MwfCKkPt4Arg1gRJEyA47DrXMS8KtqYAlBLRGCSPiKZeodnjUe6MS9NkC3WVctESZYVxUGlbEPbmp5Nl3TZD7hgkIkP4bCKgzi6ucILBBycduD9nvEEMFQT0CdzBeRU8w4MhmRkljdgTlmYLif96HtuSXNTQDHqvbcQxB6ZsWjV7MxcP96wPg8khHyEAtvAoS7bM3qTjxrW6BpOs9fo0eG95PauaJrdOLANVaQOUvXxS5PXTTMJLzaud7dVQBbBnreNe3BjhcmGEn9nFTFupydwBcPzll0koxPLeVEqoUS8K4gnGaVOGwXcIw2jcs3ih11EziSAgsAmMIfoVI6hfrCOI64BXe3tT06cepAdKPS6MGBizDOwaC2Hw8LnzUEoYx3gTHYMegfNFFY1qitUqprRmXqTTw7zjlTiD6blYTn5itptzxwIPYuamQmxM93B2SoUtMnzxMmhHLsQXYwR6EfKkfpTCtq4dWbQRJLFWXkADgksok3JmO19UihIAhfKaRhKVWK8co36aFGOuvgvAJs7h2eMEBvQlti9WkFA4t2Seo5sguKD006N9eVfEmLOEyfHXKJnSVG2yzDryR5iC9pJmkzVJ9lpR61N8j0am3fBjDFVSHl",
+      "estimatedCost": 8
+    },
+    {
+      "id": "left_front_wheel",
+      "name": "Left Front Wheel",
+      "type": "mechanism",
+      "partId": "d1dd0089-230f-49a5-a027-7d1c5de59cad",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=65mm+Rubber+Robot+Wheel+%28BO+Motor+compatible%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51qxSLNWqwL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008696223323.html?pdp_npi=6%40dis%21USD%210.77%210.71%21%21%210.77%210.71%21%402151fca717796465126244192e10e7%2112000046490629111%21affd%21%21%21%211%210%21",
+            "price": "$0.71",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B098Q1BCX5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.55",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x65x28mm",
+      "description": "Rubber wheel for left front BO DC motor, providing traction and movement.",
+      "productName": "65mm Rubber Robot Wheel (BO Motor compatible)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "estimatedCost": 3.5
+    },
+    {
+      "id": "right_front_wheel",
+      "name": "Right Front Wheel",
+      "type": "mechanism",
+      "partId": "d1dd0089-230f-49a5-a027-7d1c5de59cad",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=65mm+Rubber+Robot+Wheel+%28BO+Motor+compatible%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51qxSLNWqwL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008696223323.html?pdp_npi=6%40dis%21USD%210.77%210.71%21%21%210.77%210.71%21%402151fca717796465126244192e10e7%2112000046490629111%21affd%21%21%21%211%210%21",
+            "price": "$0.71",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B098Q1BCX5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.55",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x65x28mm",
+      "description": "Rubber wheel for right front BO DC motor, providing traction and movement.",
+      "productName": "65mm Rubber Robot Wheel (BO Motor compatible)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "estimatedCost": 3.5
+    },
+    {
+      "id": "left_rear_wheel",
+      "name": "Left Rear Wheel",
+      "type": "mechanism",
+      "partId": "d1dd0089-230f-49a5-a027-7d1c5de59cad",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=65mm+Rubber+Robot+Wheel+%28BO+Motor+compatible%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51qxSLNWqwL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008696223323.html?pdp_npi=6%40dis%21USD%210.77%210.71%21%21%210.77%210.71%21%402151fca717796465126244192e10e7%2112000046490629111%21affd%21%21%21%211%210%21",
+            "price": "$0.71",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B098Q1BCX5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.55",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x65x28mm",
+      "description": "Rubber wheel for left rear BO DC motor, providing traction and movement.",
+      "productName": "65mm Rubber Robot Wheel (BO Motor compatible)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "estimatedCost": 3.5
+    },
+    {
+      "id": "right_rear_wheel",
+      "name": "Right Rear Wheel",
+      "type": "mechanism",
+      "partId": "d1dd0089-230f-49a5-a027-7d1c5de59cad",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=65mm+Rubber+Robot+Wheel+%28BO+Motor+compatible%29&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51qxSLNWqwL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005008696223323.html?pdp_npi=6%40dis%21USD%210.77%210.71%21%21%210.77%210.71%21%402151fca717796465126244192e10e7%2112000046490629111%21affd%21%21%21%211%210%21",
+            "price": "$0.71",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B098Q1BCX5?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$8.55",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0FX3V9KSM?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "65x65x28mm",
+      "description": "Rubber wheel for right rear BO DC motor, providing traction and movement.",
+      "productName": "65mm Rubber Robot Wheel (BO Motor compatible)",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxgcBGfsdXsdfqv5d9dHwkAGIifdQ20RJDwM31rsvgXhx3QO0vnj0zdGqWSzdSxBcUzzCfaCZC1WC9vGqBOSpugT1pE1Ze8zFeflRwKTVjFVcxlvpSeEhTGJUkZiMv5hZtMAecTJYWECADSsx3KQUykUhrd0bHjzYIrbEQ7eAQ763aZwVSVgjM55ykrvcnldSY4kVhYG4neTeLSappMEHBoob6scJn1G9O5VHJRhBVboXa6ZAZ57Ot1KM2l0SBNNCKj8vtT1tBR0IPwryjliribW4ltXkmRQ5tB8ODPzaEAERqM0H5fR4VyV7dZIjLJ6ACgG3IqdFDmefR0OP05VOy6H30JliUVHQAB7kvvPAdg2rs07cQVlpmWOh5jpPgQ9hg8jq0Wp2FADS9Tohw1DvxntbbGY7ICQ1b0966R4dCWMuXHWAChqdZWh9ByfCjDed7AgqYz3rYZUdwye2W9KwLUX5XXvddItloqAe2Izv3kfbylHDmbpVkVsaF5I0p9JtRm3TbqsBzkE5r9Z9Iu04fYS2DPfHw6yyyvyf89DRvaMPhugEFvxi7qtjUPV1L2l0I8jSmyZtBU5yqdxb7sPDWafLLgtfkbkRjGlCbSn6bJ2ildxINEnEvYbf7Np5S4JVPLIvGiGzlloEvmu02XAchrcB",
+      "estimatedCost": 3.5
+    },
+    {
+      "id": "chassis_mounting_screws_m3x6",
+      "name": "Chassis Mounting Screws",
+      "type": "misc",
+      "partId": "b9176cca-7f23-4e48-addc-df122fbaec36",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x6mm+Phillips+Head+Screws&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/51CXbHhv5uL._SL500_.jpg",
+      "quantity": 20,
+      "research": {
+        "specs": [
+          {
+            "label": "material",
+            "value": "Unspecified (commonly stainless steel or zinc-plated steel)"
+          },
+          {
+            "label": "head_type",
+            "value": "Pan Head"
+          },
+          {
+            "label": "length_mm",
+            "value": "6"
+          },
+          {
+            "label": "drive_type",
+            "value": "Phillips"
+          },
+          {
+            "label": "thread_size",
+            "value": "M3"
+          },
+          {
+            "label": "thread_pitch_mm",
+            "value": "0.5"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B012TE12CY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.29",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006638485902.html?pdp_npi=6%40dis%21USD%210.41%210.37%21%21%212.77%212.47%21%402151fd3a17793303605001822e0fed%2112000037896037213%21affd%21%21%21%211%210%21",
+            "price": "$0.37",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B012TE12CY?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x6mm",
+      "description": "Standard M3 screws for general component mounting to the chassis plate.",
+      "productName": "M3x6mm Phillips Head Screws",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR1m64YeugrXRXe9HisYVtou6iC2Kk3xAOMlepM9UNlxv8bj8VTt3waS2daRwQGJ7NAvrkr3jbqenqfXEQLFEynK4FrFFnYrZKcQMTTLEGqNVippJiD4B1ATYQKn35NKeXDKqcS47KNsrtIFIW2zigBwdMtnUyrQ5k93FykuLVvuxciH9l7TQMuniGBp3lOBXzI5BUqWNvODrojUIafD5817GydGjvpeHrETNwonZhsM2VuWP5rZc6o9WuIYBXfUEktUPBlsMsdOaNURZXHKhdQG0WWrXh5ojryBvB5SNXB4zs2BgY64aKxmzm2Ot0UAtHYqcyf39lFSOLIf76nrIs7nKnSXF44jlcxeFrh7tyvK33aESU7SHzmhsD8u06fB8K8PPAPAAZkaXUcnFHT0yCcUu897vvpuZ4r44x0LigeHD8qtXnAQBNiUcCgE0HhKAbLZvEvPeJhItDY5ZWEL4Sw3gW031uLTRsw5qLEIzJLnqfYD5aweCVHzW73dcY2IkZYCSHWZDqSYK6itP663xAyZXroIJxgZqxVJL9cx0BlNk6mUS4IKygruknODEFJupNx2CHVZttaCn7esI5GXLH5jLeapvQ0svGxQlUoDD6KWEnCeB4iAf9QV7BqI6ezzTsOj9MZkg53jTBy9HMDGCWcT",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxR1m64YeugrXRXe9HisYVtou6iC2Kk3xAOMlepM9UNlxv8bj8VTt3waS2daRwQGJ7NAvrkr3jbqenqfXEQLFEynK4FrFFnYrZKcQMTTLEGqNVippJiD4B1ATYQKn35NKeXDKqcS47KNsrtIFIW2zigBwdMtnUyrQ5k93FykuLVvuxciH9l7TQMuniGBp3lOBXzI5BUqWNvODrojUIafD5817GydGjvpeHrETNwonZhsM2VuWP5rZc6o9WuIYBXfUEktUPBlsMsdOaNURZXHKhdQG0WWrXh5ojryBvB5SNXB4zs2BgY64aKxmzm2Ot0UAtHYqcyf39lFSOLIf76nrIs7nKnSXF44jlcxeFrh7tyvK33aESU7SHzmhsD8u06fB8K8PPAPAAZkaXUcnFHT0yCcUu897vvpuZ4r44x0LigeHD8qtXnAQBNiUcCgE0HhKAbLZvEvPeJhItDY5ZWEL4Sw3gW031uLTRsw5qLEIzJLnqfYD5aweCVHzW73dcY2IkZYCSHWZDqSYK6itP663xAyZXroIJxgZqxVJL9cx0BlNk6mUS4IKygruknODEFJupNx2CHVZttaCn7esI5GXLH5jLeapvQ0svGxQlUoDD6KWEnCeB4iAf9QV7BqI6ezzTsOj9MZkg53jTBy9HMDGCWcT",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "m3_nuts",
+      "name": "M3 Nuts",
+      "type": "misc",
+      "partId": "c3dca189-2353-43a1-b760-66b6cefe0032",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3+Hex+Nuts&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/31bFY16mChL._SL500_.jpg",
+      "quantity": 20,
+      "research": {
+        "specs": [
+          {
+            "label": "Material",
+            "value": "18-8 Stainless Steel"
+          },
+          {
+            "label": "Standard",
+            "value": "DIN 934"
+          },
+          {
+            "label": "Thread Size",
+            "value": "M3"
+          },
+          {
+            "label": "Thickness_mm",
+            "value": "2.4"
+          },
+          {
+            "label": "mcmaster_url",
+            "value": "https://www.mcmaster.com/90591A121"
+          },
+          {
+            "label": "Thread Pitch_mm",
+            "value": "0.5"
+          },
+          {
+            "label": "mcmaster_part_number",
+            "value": "90591A121"
+          },
+          {
+            "label": "Width Across Flats_mm",
+            "value": "5.5"
+          }
+        ],
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.amazon.com/binifiMux-M1-6-Stainless-Steel-200pcs/dp/B08N68W9SP",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005007278965396.html?pdp_npi=6%40dis%21USD%216.21%216.08%21%21%2142.11%2141.23%21%40210152bd17793266883568522e1214%2112000040076085093%21affd%21%21%21%211%210%21",
+            "price": "$6.08",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://accu-components.com/us/hexagon-nuts/7888-HPN-M3-A2",
+            "vendor": "Accu"
+          },
+          {
+            "url": "",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.mcmaster.com/90591A121",
+            "vendor": "McMaster-Carr"
+          }
+        ],
+        "alternatives": [
+          {
+            "name": "MonsterBolts M3 Hex Nuts (A4/316 Stainless Steel)",
+            "reason": "Uses A4 (316) marine-grade stainless steel, which offers higher corrosion resistance than 18-8 (304) stainless steel, but is not the specified material."
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3",
+      "description": "Hex nuts for securing M3 screws.",
+      "productName": "M3 Hex Nuts",
+      "purchaseUrl": "https://www.amazon.com/dp/B0F9FC4563?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxheLVocLOesSj3YW9HVKSsjAuk0dhY8YT34rvUc5SPCcgI4QR7M5m7vL2CF1qaBN4YJaX2QCpde3asIqUTPZ7VH9jKyimAosVWo9rG6TlCDaJUGpnvxlaPEscouM2pHiy6Zxvpv1xT7pzOx6Fyo1keQHGdNb57GbSrrLl71Nratjl21Ld7kva7BOr6PkrmoRWaWh55AYomtd8Z3yTq04PvrqlY5YBlai14Zqqm1nwp3TV2K5uxs0EGrCrPfu4GYI7jNaPISs01eXJf41jhf0QpknTJxW8qBL9GcWbb9hfTnLyftpwrbKqPnF8dvx4RHQkb8ZP8BSR81V5Fu45b5wJbrDhRnyjz0RXWL5BXkBaEs3ZSp7WOwJEtZ1t3tvABpapsuJRrQbLqHwt6h8T28IiiGvsb55OJKTAhaiBPwnBWGJ74IpYm6mf32wB3kuuhALc6jRTSWG3Df4XHqSsoXkfwwzvcYwbVm6PDdgzJw7MEBaWEkQwFos1EuzSOsU3IDiG7r2kJf7eV9aInWlTwQ977gk6Q27AfFEY984k1lgT40XJlTIWPlMvK7GlvY7giUmMRlsr4ETykxB2EQ9k6wlIDNTUesgVotiHHythHgqnxfbJyf5h6w0WqBMIGaF0R88Tm1iWPDGAkRtRFuY5ke41QIn",
+      "estimatedCost": 0.03
+    },
+    {
+      "id": "m3_standoffs_10mm",
+      "name": "M3 Brass Standoffs",
+      "type": "misc",
+      "partId": "ddfe0ce1-9324-4de3-be6e-625f4cb2946b",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=M3x10mm+Brass+Hex+Standoffs&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41O0ecEWzkL._SL500_.jpg",
+      "quantity": 8,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08F1X6ZL7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.89",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/w/wholesale-m3x10mm-brass-hex-standoffs.html",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08F1X6ZL7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "M3x10mm",
+      "description": "Hex standoffs for mounting PCBs and providing clearance from the chassis.",
+      "productName": "M3x10mm Brass Hex Standoffs",
+      "purchaseUrl": "https://www.amazon.com/dp/B08F1X6ZL7?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3s8VCn7",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "esp32_dev_module_mount",
+      "name": "ESP32 Dev Module Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "esp32_dev_module",
+      "dimensions": "60x30x10mm",
+      "description": "3D printed mount to secure the ESP32 Dev Module to the chassis.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "l298n_motor_driver_mount",
+      "name": "L298N Motor Driver Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "motor_driver",
+      "dimensions": "70x60x15mm",
+      "description": "3D printed mount to secure the L298N Motor Driver to the chassis.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "oled_display_mount",
+      "name": "OLED Display Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "oled_display",
+      "dimensions": "40x30x8mm",
+      "description": "3D printed mount/bezel for the 0.91/0.96 inch I2C OLED Display, securing it to the chassis.",
+      "purchaseUrl": "",
+      "estimatedCost": 1,
+      "printSettings": "15% infill, 0.2mm layer"
+    },
+    {
+      "id": "battery_18650_series_holder",
+      "name": "18650 Series Battery Holder",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "mountsFor": "battery_18650_1",
+      "dimensions": "80x40x25mm",
+      "description": "3D printed holder for two 18650 Li-ion batteries, designed for series connection and chassis mounting.",
+      "purchaseUrl": "",
+      "estimatedCost": 2.5,
+      "printSettings": "25% infill, 0.2mm layer"
+    },
+    {
+      "id": "left_front_bo_motor_mount",
+      "name": "Left Front BO Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "left_front_dc_motor",
+      "dimensions": "65x30x25mm",
+      "description": "3D printed mount for the left front BO DC motor, securing it to the chassis.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.8,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "right_front_bo_motor_mount",
+      "name": "Right Front BO Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "right_front_dc_motor",
+      "dimensions": "65x30x25mm",
+      "description": "3D printed mount for the right front BO DC motor, securing it to the chassis.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.8,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "left_rear_bo_motor_mount",
+      "name": "Left Rear BO Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "left_rear_dc_motor",
+      "dimensions": "65x30x25mm",
+      "description": "3D printed mount for the left rear BO DC motor, securing it to the chassis.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.8,
+      "printSettings": "30% infill, 0.2mm layer"
+    },
+    {
+      "id": "right_rear_bo_motor_mount",
+      "name": "Right Rear BO Motor Mount",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "mountsFor": "right_rear_dc_motor",
+      "dimensions": "65x30x25mm",
+      "description": "3D printed mount for the right rear BO DC motor, securing it to the chassis.",
+      "purchaseUrl": "",
+      "estimatedCost": 1.8,
+      "printSettings": "30% infill, 0.2mm layer"
+    }
+  ],
+  "notes": [
+    "Modular architecture",
+    "Expandable design",
+    "Professional grade",
+    "Clean code",
+    "Object-oriented",
+    "GitHub-ready"
+  ],
+  "projectName": "Nico V2 Robot (1)",
+  "originalPrompt": "Create a production-quality Arduino project called \"Nico V2\", a smart Wi-Fi controlled robot built using an ESP32 Dev Module.\n\nProject Information\n-------------------\nProject Name: Nico OS\nCreators: Zahid Khan & Indra Vamsi\nApp Name: ZAHID'sFirst\n\nObjective\n---------\nBuild a modular, expandable, and professional ESP32 robot firmware instead of a single Arduino sketch. The code should be clean, object-oriented where appropriate, heavily commented, and easy to maintain.\n\nHardware\n--------\n• ESP32 Dev Module (ESP32-WROOM-32)\n• L298N Motor Driver\n• Four BO DC Motors (2 motors on each side wired in parallel)\n• Two 18650 Li-ion batteries connected in series (7.4V nominal)\n• 0.91\"/0.96\" I2C OLED Display (SSD1306, 128x64)\n• Future support for VL53L0X distance sensor\n\nPin Configuration\n-----------------\nMotor Driver\nENA -> GPIO14\nIN1 -> GPIO27\nIN2 -> GPIO26\nIN3 -> GPIO25\nIN4 -> GPIO33\nENB -> GPIO32\n\nOLED\nSDA -> GPIO21\nSCL -> GPIO22\n\nCommunication\n-------------\nUse WiFi UDP.\n\nRobot listens on UDP port 12345.\n\nConnect to WiFi hotspot using configurable SSID and Password.\n\nAutomatically reconnect to WiFi if disconnected.\n\nDisplay connection status on Serial Monitor and OLED.\n\nCommand Protocol\n----------------\nSupport both:\n\nF\nB\nL\nR\nS\n\nand\n\nf,150\nb,150\nl,120\nr,120\ns,0\n\nThe parser should automatically detect the command format.\n\nSpeed range:\n0–255\n\nRobot Features\n--------------\nForward\n\nBackward\n\nLeft\n\nRight\n\nStop\n\nAutomatic stop if no command is received for 200 milliseconds.\n\nPWM speed control.\n\nEmergency stop.\n\nSoftware Requirements\n---------------------\nCreate a professional folder structure.\n\nNico_V2/\n\nNico_V2.ino\n\nConfig.h\n\nMotor.h\n\nMotor.cpp\n\nDisplay.h\n\nDisplay.cpp\n\nWiFiControl.h\n\nWiFiControl.cpp\n\nCommandParser.h\n\nCommandParser.cpp\n\nLogo.h\n\nREADME.md\n\nlibraries.txt\n\nArchitecture\n------------\nUse classes.\n\nMotor class\n\nDisplay class\n\nWiFiControl class\n\nCommandParser class\n\nAvoid global variables wherever possible.\n\nNo delay() inside loop().\n\nUse millis() timers.\n\nOLED Interface\n--------------\nStartup animation.\n\nDisplay:\n\nNICO\n\nCreators:\nZahid Khan\nIndra\n\nThen show:\n\nWiFi Status\n\nIP Address\n\nDirection\n\nSpeed\n\nBattery placeholder\n\nIf WiFi disconnects:\n\nDisplay:\nWiFi Lost\nReconnecting...\n\nSerial Monitor\n--------------\nDisplay:\n\n===================================\nNICO V2\n\nCreators:\nZahid Khan\n&\nIndra\n\nConnecting WiFi...\n\nConnected\n\nIP Address\n\nListening UDP\n\nRobot Ready\n===================================\n\nMotor Control\n-------------\nUse ESP32 LEDC PWM.\n\n5000 Hz\n\n8-bit resolution.\n\nSmooth acceleration and deceleration.\n\nMaintain equal speed on left and right motors.\n\nCode Quality\n------------\nModern C++.\n\nExtensively commented.\n\nModular.\n\nGitHub-ready.\n\nNo deprecated ESP32 functions.\n\nFuture Expansion\n----------------\nDesign the project so these modules can later be added without changing the architecture:\n\nVL53L0X obstacle avoidance\n\nBattery voltage monitoring\n\nESP32-CAM\n\nVoice commands\n\nRGB LEDs\n\nBuzzer\n\nAutonomous navigation\n\nWeb dashboard\n\nOTA firmware updates\n\nDeliverables\n------------\nGenerate all source files completely.\n\nInclude README with wiring diagram, installation instructions, library requirements, upload instructions, troubleshooting guide, and project architecture explanation.\n\nThe final project should look like a polished open-source robotics repository created by professional embedded software engineers.",
+  "projectDescription": "Nico V2 Robot is an ESP32-powered, Wi-Fi controlled mobile platform utilizing an L298N motor driver for four BO DC motors. It features an OLED display for status and is powered by series-connected 18650 batteries, all integrated onto a modular chassis.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "Modular architecture",
+      "Expandable design",
+      "Professional grade",
+      "Clean code",
+      "Object-oriented",
+      "GitHub-ready"
+    ],
+    "description": "Project idea: Create a production-quality Arduino project called \"Nico V2\", a smart Wi-Fi controlled robot built using an ESP32 Dev Module.\n\nProject Information\n-------------------\nProject Name: Nico OS\nCreators: Zahid Khan & Indra Vamsi\nApp Name: ZAHID'sFirst\n\nObjective\n---------\nBuild a modular, expandable, and professional ESP32 robot firmware instead of a single Arduino sketch. The code should be clean, object-oriented where appropriate, heavily commented, and easy to maintain.\n\nHardware\n--------\n• ESP32 Dev Module (ESP32-WROOM-32)\n• L298N Motor Driver\n• Four BO DC Motors (2 motors on each side wired in parallel)\n• Two 18650 Li-ion batteries connected in series (7.4V nominal)\n• 0.91\"/0.96\" I2C OLED Display (SSD1306, 128x64)\n• Future support for VL53L0X distance sensor\n\nPin Configuration\n-----------------\nMotor Driver\nENA -> GPIO14\nIN1 -> GPIO27\nIN2 -> GPIO26\nIN3 -> GPIO25\nIN4 -> GPIO33\nENB -> GPIO32\n\nOLED\nSDA -> GPIO21\nSCL -> GPIO22\n\nCommunication\n-------------\nUse WiFi UDP.\n\nRobot listens on UDP port 12345.\n\nConnect to WiFi hotspot using configurable SSID and Password.\n\nAutomatically reconnect to WiFi if disconnected.\n\nDisplay connection status on Serial Monitor and OLED.\n\nCommand Protocol\n----------------\nSupport both:\n\nF\nB\nL\nR\nS\n\nand\n\nf,150\nb,150\nl,120\nr,120\ns,0\n\nThe parser should automatically detect the command format.\n\nSpeed range:\n0–255\n\nRobot Features\n--------------\nForward\n\nBackward\n\nLeft\n\nRight\n\nStop\n\nAutomatic stop if no command is received for 200 milliseconds.\n\nPWM speed control.\n\nEmergency stop.\n\nSoftware Requirements\n---------------------\nCreate a professional folder structure.\n\nNico_V2/\n\nNico_V2.ino\n\nConfig.h\n\nMotor.h\n\nMotor.cpp\n\nDisplay.h\n\nDisplay.cpp\n\nWiFiControl.h\n\nWiFiControl.cpp\n\nCommandParser.h\n\nCommandParser.cpp\n\nLogo.h\n\nREADME.md\n\nlibraries.txt\n\nArchitecture\n------------\nUse classes.\n\nMotor class\n\nDisplay class\n\nWiFiControl class\n\nCommandParser class\n\nAvoid global variables wherever possible.\n\nNo delay() inside loop().\n\nUse millis() timers.\n\nOLED Interface\n--------------\nStartup animation.\n\nDisplay:\n\nNICO\n\nCreators:\nZahid Khan\nIndra\n\nThen show:\n\nWiFi Status\n\nIP Address\n\nDirection\n\nSpeed\n\nBattery placeholder\n\nIf WiFi disconnects:\n\nDisplay:\nWiFi Lost\nReconnecting...\n\nSerial Monitor\n--------------\nDisplay:\n\n===================================\nNICO V2\n\nCreators:\nZahid Khan\n&\nIndra\n\nConnecting WiFi...\n\nConnected\n\nIP Address\n\nListening UDP\n\nRobot Ready\n===================================\n\nMotor Control\n-------------\nUse ESP32 LEDC PWM.\n\n5000 Hz\n\n8-bit resolution.\n\nSmooth acceleration and deceleration.\n\nMaintain equal speed on left and right motors.\n\nCode Quality\n------------\nModern C++.\n\nExtensively commented.\n\nModular.\n\nGitHub-ready.\n\nNo deprecated ESP32 functions.\n\nFuture Expansion\n----------------\nDesign the project so these modules can later be added without changing the architecture:\n\nVL53L0X obstacle avoidance\n\nBattery voltage monitoring\n\nESP32-CAM\n\nVoice commands\n\nRGB LEDs\n\nBuzzer\n\nAutonomous navigation\n\nWeb dashboard\n\nOTA firmware updates\n\nDeliverables\n------------\nGenerate all source files completely.\n\nInclude README with wiring diagram, installation instructions, library requirements, upload instructions, troubleshooting guide, and project architecture explanation.\n\nThe final project should look like a polished open-source robotics repository created by professional embedded software engineers.\n\nDesign notes: Modular architecture, Expandable design, Professional grade, Clean code, Object-oriented, GitHub-ready\n\nElectrical components (current): Main Controller (mcu, 55x28x13mm); Motor Driver (module, 43x43x27mm); 4x actuator: Left Front DC Motor, Left Rear DC Motor, Right Front DC Motor, Right Rear DC Motor; 2x power: Battery 1, Battery 2; OLED Display (display, 30x30x4mm)\n\nMechanical/structural parts (current): Chassis Base Plate (structural, 150x100x3mm); 4x mechanism: Left Front Wheel, Right Front Wheel, Left Rear Wheel, Right Rear Wheel; 3x misc: Chassis Mounting Screws, M3 Nuts, M3 Brass Standoffs; 8x 3d_printed: ESP32 Dev Module Mount, L298N Motor Driver Mount, OLED Display Mount, 18650 Series Battery Holder +4 more\n\nAssembly: Left Front BO Motor Mount → Chassis Base Plate (M3 bolts and nuts); Right Front BO Motor Mount → Chassis Base Plate (M3 bolts and nuts); Left Rear BO Motor Mount → Chassis Base Plate (M3 bolts and nuts); Right Rear BO Motor Mount → Chassis Base Plate (M3 bolts and nuts); ESP32 Dev Module Mount → Chassis Base Plate (M3 bolts and nuts); L298N Motor Driver Mount → Chassis Base Plate (M3 bolts and nuts); OLED Display Mount → Chassis Base Plate (M3 bolts and nuts); 18650 Series Battery Holder → Chassis Base Plate (M3 bolts and nuts); ESP32 Dev Module Mount → Main Controller (mount); L298N Motor Driver Mount → Motor Driver (mount); OLED Display Mount → OLED Display (mount); 18650 Series Battery Holder → Battery 1 (mount); Left Front BO Motor Mount → Left Front DC Motor (mount); Right Front BO Motor Mount → Right Front DC Motor (mount); Left Rear BO Motor Mount → Left Rear DC Motor (mount) (+1 more connections)"
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Batteries in series",
+      "source": "battery_18650_1",
+      "target": "battery_18650_2",
+      "current": "500mA",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Motor Driver VCC",
+      "source": "battery_18650_1",
+      "target": "motor_driver",
+      "current": "2A",
+      "voltage": "7.4V"
+    },
+    {
+      "type": "power",
+      "label": "Motor Driver GND",
+      "source": "battery_18650_2",
+      "target": "motor_driver",
+      "current": "2A",
+      "voltage": "7.4V"
+    },
+    {
+      "type": "power",
+      "label": "ESP32 Vin (5V regulator)",
+      "source": "battery_18650_1",
+      "target": "esp32_dev_module",
+      "current": "500mA",
+      "voltage": "7.4V"
+    },
+    {
+      "type": "power",
+      "label": "ESP32 GND",
+      "source": "battery_18650_2",
+      "target": "esp32_dev_module",
+      "current": "500mA",
+      "voltage": "0V"
+    },
+    {
+      "type": "power",
+      "label": "OLED VCC",
+      "source": "esp32_dev_module",
+      "target": "oled_display",
+      "current": "20mA",
+      "voltage": "3.3V"
+    },
+    {
+      "type": "power",
+      "label": "OLED GND",
+      "source": "esp32_dev_module",
+      "target": "oled_display",
+      "current": "20mA",
+      "voltage": "0V"
+    },
+    {
+      "type": "data",
+      "label": "Motor Enable A",
+      "source": "esp32_dev_module",
+      "target": "motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO14",
+      "targetPin": "ENA"
+    },
+    {
+      "type": "data",
+      "label": "Motor A Input 1",
+      "source": "esp32_dev_module",
+      "target": "motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO27",
+      "targetPin": "IN1"
+    },
+    {
+      "type": "data",
+      "label": "Motor A Input 2",
+      "source": "esp32_dev_module",
+      "target": "motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO26",
+      "targetPin": "IN2"
+    },
+    {
+      "type": "data",
+      "label": "Motor B Input 1",
+      "source": "esp32_dev_module",
+      "target": "motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO25",
+      "targetPin": "IN3"
+    },
+    {
+      "type": "data",
+      "label": "Motor B Input 2",
+      "source": "esp32_dev_module",
+      "target": "motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO33",
+      "targetPin": "IN4"
+    },
+    {
+      "type": "data",
+      "label": "Motor Enable B",
+      "source": "esp32_dev_module",
+      "target": "motor_driver",
+      "protocol": "gpio",
+      "sourcePin": "GPIO32",
+      "targetPin": "ENB"
+    },
+    {
+      "type": "data",
+      "label": "Left Motor Front (+)",
+      "source": "motor_driver",
+      "target": "left_front_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT1",
+      "targetPin": "M+"
+    },
+    {
+      "type": "data",
+      "label": "Left Motor Front (-)",
+      "source": "motor_driver",
+      "target": "left_front_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT2",
+      "targetPin": "M-"
+    },
+    {
+      "type": "data",
+      "label": "Left Motor Rear (+)",
+      "source": "motor_driver",
+      "target": "left_rear_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT1",
+      "targetPin": "M+"
+    },
+    {
+      "type": "data",
+      "label": "Left Motor Rear (-)",
+      "source": "motor_driver",
+      "target": "left_rear_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT2",
+      "targetPin": "M-"
+    },
+    {
+      "type": "data",
+      "label": "Right Motor Front (+)",
+      "source": "motor_driver",
+      "target": "right_front_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT3",
+      "targetPin": "M+"
+    },
+    {
+      "type": "data",
+      "label": "Right Motor Front (-)",
+      "source": "motor_driver",
+      "target": "right_front_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT4",
+      "targetPin": "M-"
+    },
+    {
+      "type": "data",
+      "label": "Right Motor Rear (+)",
+      "source": "motor_driver",
+      "target": "right_rear_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT3",
+      "targetPin": "M+"
+    },
+    {
+      "type": "data",
+      "label": "Right Motor Rear (-)",
+      "source": "motor_driver",
+      "target": "right_rear_dc_motor",
+      "protocol": "gpio",
+      "sourcePin": "OUT4",
+      "targetPin": "M-"
+    },
+    {
+      "type": "data",
+      "label": "OLED I2C SDA",
+      "source": "esp32_dev_module",
+      "target": "oled_display",
+      "protocol": "i2c",
+      "sourcePin": "GPIO21",
+      "targetPin": "SDA"
+    },
+    {
+      "type": "data",
+      "label": "OLED I2C SCL",
+      "source": "esp32_dev_module",
+      "target": "oled_display",
+      "protocol": "i2c",
+      "sourcePin": "GPIO22",
+      "targetPin": "SCL"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "M3 bolts and nuts",
+      "source": "left_front_bo_motor_mount",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "M3 bolts and nuts",
+      "source": "right_front_bo_motor_mount",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "M3 bolts and nuts",
+      "source": "left_rear_bo_motor_mount",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "M3 bolts and nuts",
+      "source": "right_rear_bo_motor_mount",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "M3 bolts and nuts",
+      "source": "esp32_dev_module_mount",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "M3 bolts and nuts",
+      "source": "l298n_motor_driver_mount",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "M3 bolts and nuts",
+      "source": "oled_display_mount",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "M3 bolts and nuts",
+      "source": "battery_18650_series_holder",
+      "target": "robot_chassis_base_plate"
+    },
+    {
+      "label": "mount",
+      "source": "esp32_dev_module_mount",
+      "target": "esp32_dev_module"
+    },
+    {
+      "label": "mount",
+      "source": "l298n_motor_driver_mount",
+      "target": "motor_driver"
+    },
+    {
+      "label": "mount",
+      "source": "oled_display_mount",
+      "target": "oled_display"
+    },
+    {
+      "label": "mount",
+      "source": "battery_18650_series_holder",
+      "target": "battery_18650_1"
+    },
+    {
+      "label": "mount",
+      "source": "left_front_bo_motor_mount",
+      "target": "left_front_dc_motor"
+    },
+    {
+      "label": "mount",
+      "source": "right_front_bo_motor_mount",
+      "target": "right_front_dc_motor"
+    },
+    {
+      "label": "mount",
+      "source": "left_rear_bo_motor_mount",
+      "target": "left_rear_dc_motor"
+    },
+    {
+      "label": "mount",
+      "source": "right_rear_bo_motor_mount",
+      "target": "right_rear_dc_motor"
+    }
+  ],
+  "projectId": "66b79b39-0410-430b-81ad-3d7471853f65"
+}
