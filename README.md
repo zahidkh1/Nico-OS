@@ -1,5 +1,24 @@
 <div align="center">
 
+<img src="images/nico_OS.png" width="220">
+
+# NICO OS
+
+### Intelligent WiFi-Controlled Robotics Platform
+
+**Built with ESP32 • Arduino • Android • IoT**
+
+![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?style=for-the-badge)
+![Arduino](https://img.shields.io/badge/Arduino-C++-00979D?style=for-the-badge)
+![Android](https://img.shields.io/badge/Android-App-green?style=for-the-badge)
+![License](https://img.shields.io/github/license/zahidkh1/Nico-OS?style=for-the-badge)
+
+Designed & Developed by
+
+## Zahid Khan • Indra
+
+</div><div align="center">
+
 # NICO OS
 
 ### A WiFi-Controlled Smart Robotic Platform Powered by ESP32
