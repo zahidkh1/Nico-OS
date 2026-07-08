@@ -71,7 +71,7 @@
 
 <p align="center">
 
-<img src="images/Nico_Front view.jpeg" width="700" alt="Nico OS Robot">
+<img src="images/front-view.jpeg" width="700" alt="Nico OS Robot">
 
 </p>
 
