@@ -94,7 +94,7 @@ The system is designed to be modular, allowing future integration of additional 
 | L298N Motor Driver | 1 |
 | BO Motors | 4 |
 | Wheels | 4 |
-| 18650 Li-ion Battery | 2 |
+| 18650 Li-ion Battery | 4 |
 | Chassis | 1 |
 | Power Switch | 1 |
 | Android Smartphone | 1 |
